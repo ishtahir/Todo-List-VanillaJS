@@ -10,5 +10,13 @@ const todoList = {
     addTodo: function(newItem) {
         this.todo.push(newItem);
         this.displayTodos();
+    },
+    changeTodo: function(index, newValue) {
+        this.todo[index] = newValue;
+        this.displayTodos();
+    },
+    deleteTodo: function(index) {
+        this.todo.splice(index, 1);
+        this.displayTodos();
     }
 };
