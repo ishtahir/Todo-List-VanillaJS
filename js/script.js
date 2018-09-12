@@ -28,5 +28,25 @@ const todoList = {
         const todo = this.todo[index];
         todo.completed = !todo.completed;
         this.displayTodos();
+    },
+    toggleAll: function() {
+        let completed = 0;
+        this.todo.forEach(item => {
+            if (item.completed) {
+                completed++;
+            };
+        });
+        // if everything is true, make everything false
+        if (completed === this.todo.length) {
+            this.todo.forEach(item => item.completed = false)
+        } else {
+            // make everything true
+            this.todo.forEach(item => {
+                if (item.completed === false) {
+                    item.completed = true;
+                }
+            })
+        }
+        this.displayTodos();
     }
 };
