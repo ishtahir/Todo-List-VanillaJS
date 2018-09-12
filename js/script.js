@@ -5,7 +5,9 @@ const todoList = {
         if (this.todo.length === 0) {
             console.log('List is empty, please add an item to do');
         }
-        this.todo.forEach(item => console.log(item));
+        this.todo.forEach(item => {
+            item.completed ? console.log(`(X) ${item.todoText}`) : console.log(`( ) ${item.todoText}`);
+        });
     },
     addTodo: function(text) {
         this.todo.push({
