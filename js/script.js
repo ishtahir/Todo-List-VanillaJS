@@ -14,12 +14,17 @@ const todoList = {
         });
         this.displayTodos();
     },
-    changeTodo: function(index, newValue) {
-        this.todo[index].todoText = newValue;
+    changeTodo: function(index, newText) {
+        this.todo[index].todoText = newText;
         this.displayTodos();
     },
     deleteTodo: function(index) {
         this.todo.splice(index, 1);
+        this.displayTodos();
+    },
+    toggleCompleted: function(index) {
+        const todo = this.todo[index];
+        todo.completed = !todo.completed;
         this.displayTodos();
     }
 };
