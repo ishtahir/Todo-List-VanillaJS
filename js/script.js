@@ -1,3 +1,4 @@
+// working in the console to start off
 const todoList = {
     todo: [],
     displayTodos: function() {
@@ -6,4 +7,8 @@ const todoList = {
         }
         console.log(this.todo)
     },
+    addTodo: function(newItem) {
+        this.todo.push(newItem);
+        this.displayTodos();
+    }
 };
