@@ -12,3 +12,10 @@ input[type="text"] {
 ul {
     list-style-type: none;
 }
+
+button {
+    padding: 10px;
+    border-radius: 10px;
+    background: #18dd22;
+    color: white;
+}
