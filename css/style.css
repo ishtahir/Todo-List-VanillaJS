@@ -5,8 +5,11 @@ body {
 
 input[type="text"] {
     padding: 10px;
-    width: 30%;
-    font-family: cursive;
+    width: 40%;
+    font-family: fantasy;
+    font-size: 1.1em;
+    border: 1px solid;
+    margin-right: 10px;
 }
 
 ul {
