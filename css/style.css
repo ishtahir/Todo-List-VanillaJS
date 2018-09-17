@@ -16,9 +16,16 @@ ul {
     list-style-type: none;
 }
 
-button {
+.add-btn {
     padding: 10px;
     border-radius: 10px;
     background: #18dd22;
+    color: white;
+}
+
+.remove-btn {
+    padding: 10px;
+    border-radius: 10px;
+    background: #ef0e0e;
     color: white;
 }
