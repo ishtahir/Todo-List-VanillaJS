@@ -1,5 +1,5 @@
 const displayBtn = document.querySelector('.display-btn');
-const toggleBtn = document.querySelector('.toggle-all');
+const toggleBtn = document.querySelector('.toggle-btn');
 const ul = document.createElement('ul');
 
 // working in the console to start off
