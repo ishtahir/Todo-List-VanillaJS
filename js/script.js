@@ -63,3 +63,7 @@ const todoList = {
 displayBtn.addEventListener('click', function() {
     todoList.displayTodos();
 });
+
+toggleBtn.addEventListener('click', function() {
+    todoList.toggleAll();
+})
