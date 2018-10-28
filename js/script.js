@@ -1,4 +1,6 @@
 const ul = document.createElement('ul');
+ul.classList.add('notes');
+const input = document.getElementById('todo-input');
 
 // working in the console to start off
 const todoList = {
@@ -6,12 +8,12 @@ const todoList = {
     displayTodos: function() {
         if (this.todo.length === 0) {
             console.log('List is empty, please add an item to do');
-            ul.innerHTML = '<li>List is empty, please add an item to do</li>'
+            ul.innerHTML = '<li>List is empty, please add an item to do</li>';
         }
         let lists = '';
         this.todo.map(item => {
             item.completed ? console.log(`(X) ${item.todoText}`) : console.log(`( ) ${item.todoText}`);
-            lists += item.completed ? `<li><input type="checkbox" checked> ${item.todoText}</li>` : `<li><input type="checkbox"> ${item.todoText}</li>`;
+            lists += item.completed ? `<li class="note"><input type="checkbox" checked> ${item.todoText}</li>` : `<li class="note"><input type="checkbox"> ${item.todoText}</li>`;
         });
         ul.innerHTML = lists;
         document.body.appendChild(ul);
@@ -21,6 +23,7 @@ const todoList = {
             todoText: text,
             completed: false
         });
+        input.value = '';
         this.displayTodos();
     },
     changeTodo: function(index, newText) {

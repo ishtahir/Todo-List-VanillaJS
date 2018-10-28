@@ -1,6 +1,7 @@
 body {
     text-align: center;
     font-family: serif;
+    position: relative;
 }
 
 input[type="text"] {
@@ -28,4 +29,26 @@ ul {
     border-radius: 10px;
     background: #ef0e0e;
     color: white;
+}
+
+.other-btns {
+    margin-top: 15px;
+}
+
+.notes {
+    text-align: left;
+    position: absolute;
+    top: 110%;
+    left: 30%;
+    transform: translate(-50% -50%);
+}
+
+.note:not(last-child) {
+    margin-bottom: 10px;
+}
+
+.note {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: sans-serif;
 }

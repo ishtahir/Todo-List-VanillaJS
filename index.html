@@ -7,12 +7,14 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <h1>todo List (Vanilla JS)</h1>
+        <h1>Todo List (Vanilla JS)</h1>
         <input type="text" id="todo-input" placeholder="What needs to be done?">
-        <button class="add-btn">ADD</button>
+        <button onclick="todoList.addTodo(input.value)" class="add-btn">ADD</button>
         <button class="remove-btn">REMOVE</button>
-        <button onclick="handlers.displayTodos()">Display Todos</button>
-        <button onclick="handlers.toggleAll()">Toggle All</button>
+        <div class="other-btns">
+            <button onclick="handlers.displayTodos()">Display Todos</button>
+            <button onclick="handlers.toggleAll()">Toggle All</button>
+        </div>
 
         <script src="js/script.js"></script>
     </body>
