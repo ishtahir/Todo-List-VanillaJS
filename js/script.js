@@ -1,5 +1,3 @@
-const displayBtn = document.querySelector('.display-btn');
-const toggleBtn = document.querySelector('.toggle-btn');
 const ul = document.createElement('ul');
 
 // working in the console to start off
@@ -60,10 +58,11 @@ const todoList = {
     }
 };
 
-displayBtn.addEventListener('click', function() {
-    todoList.displayTodos();
-});
-
-toggleBtn.addEventListener('click', function() {
-    todoList.toggleAll();
-})
+const handlers = {
+    displayTodos: function() {
+        todoList.displayTodos();
+    },
+    toggleAll: function() {
+        todoList.toggleAll();
+    }
+}
