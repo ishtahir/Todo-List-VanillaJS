@@ -1,6 +1,14 @@
+const todoInput = document.getElementById('todo-input');
 const ul = document.createElement('ul');
 ul.classList.add('notes');
-const input = document.getElementById('todo-input');
+
+// use enter button for click
+todoInput.addEventListener("keyup", event => {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.querySelector('.add-btn').click();
+    }
+});
 
 // working in the console to start off
 const todoList = {
@@ -23,7 +31,6 @@ const todoList = {
             todoText: text,
             completed: false
         });
-        input.value = '';
         this.displayTodos();
     },
     changeTodo: function(index, newText) {
@@ -67,5 +74,9 @@ const handlers = {
     },
     toggleAll: function() {
         todoList.toggleAll();
+    },
+    addTodo: function() {
+        todoList.addTodo(todoInput.value);
+        todoInput.value = '';
     }
 }
