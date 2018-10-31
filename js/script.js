@@ -5,7 +5,7 @@ ul.classList.add('notes');
 // use enter button for click
 todoInput.addEventListener("keyup", event => {
     event.preventDefault();
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13 && todoInput.value) {
         document.querySelector('.add-btn').click();
     }
 });
