@@ -18,6 +18,21 @@ ul {
     list-style-type: none;
 }
 
+input {
+    display: none;
+}
+
+label {
+    font-weight: bold;
+}
+
+input:checked + label{
+    font-weight: none;
+    color: #aaa;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
 .add-btn {
     padding: 10px;
     border-radius: 10px;
