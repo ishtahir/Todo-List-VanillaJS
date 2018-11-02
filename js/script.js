@@ -21,7 +21,7 @@ const todoList = {
         let lists = '';
         this.todo.map(item => {
             item.completed ? console.log(`(X) ${item.todoText}`) : console.log(`( ) ${item.todoText}`);
-            lists += item.completed ? `<li class="note"><input type="checkbox" checked> ${item.todoText}</li>` : `<li class="note"><input type="checkbox"> ${item.todoText}</li>`;
+            lists += item.completed ? `<li class="note"><input type="checkbox" checked><label>${item.todoText}</label></li>` : `<li class="note"><input type="checkbox"><label>${item.todoText}</label></li>`;
         });
         ul.innerHTML = lists;
         document.body.appendChild(ul);
