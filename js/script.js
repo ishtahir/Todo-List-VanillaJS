@@ -78,5 +78,8 @@ const handlers = {
     addTodo: function() {
         todoList.addTodo(todoInput.value);
         todoInput.value = '';
+    },
+    clearCompleted: function() {
+        
     }
 }
