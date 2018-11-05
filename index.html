@@ -11,10 +11,14 @@
         <h1>Todo List (Vanilla JS)</h1>
         <input type="text" id="todo-input" placeholder="What needs to be done?">
         <button onclick="handlers.addTodo()" class="add-btn">ADD</button>
-        <button onclick="handlers.clearCompleted()" class="remove-btn">REMOVE</button>
+        <button onclick="handlers.changeTodo()" class="remove-btn">CHANGE</button>
         <div class="other-btns">
             <button onclick="handlers.displayTodos()">Display Todos</button>
             <button onclick="handlers.toggleAll()">Toggle All</button>
+        </div>
+        <div>
+            <input type="number" class="index-input" min="0">
+            <input type="text" class="content-input">
         </div>
 
         <script src="js/script.js"></script>

@@ -4,7 +4,7 @@ body {
     position: relative;
 }
 
-input[type="text"] {
+#todo-input {
     padding: 10px;
     width: 40%;
     font-family: 'Roboto Condensed', sans-serif;

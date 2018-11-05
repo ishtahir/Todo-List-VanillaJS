@@ -79,7 +79,10 @@ const handlers = {
         todoList.addTodo(todoInput.value);
         todoInput.value = '';
     },
-    clearCompleted: function() {
-        
+    changeTodo: function() {
+        const indexInput = document.querySelector('.index-input');
+        const contentInput = document.querySelector('.content-input');
+        console.log(indexInput)
+        todoList.changeTodo(indexInput.value, contentInput.value);
     }
 }
