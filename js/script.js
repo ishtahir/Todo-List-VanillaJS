@@ -84,8 +84,5 @@ const handlers = {
         const contentInput = document.querySelector('.content-input');
         console.log(indexInput)
         todoList.changeTodo(indexInput.value, contentInput.value);
-    },
-    toggleCompleted: function() {
-
     }
 }
