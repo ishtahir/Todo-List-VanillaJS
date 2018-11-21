@@ -92,8 +92,9 @@ const handlers = {
     },
     deleteTodo: function() {
         const deleteIndex = document.querySelector('.delete-index');
-        if (deleteIndex.value) {
+        if (deleteIndex.value && todoList.todo[deleteIndex.value]) {
             todoList.deleteTodo(deleteIndex.valueAsNumber);
         }
+        deleteIndex.value = '';
     }
 }
