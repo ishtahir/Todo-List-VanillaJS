@@ -89,5 +89,11 @@ const handlers = {
         }
         indexInput.value = '';
         contentInput.value = '';
+    },
+    deleteTodo: function() {
+        const deleteIndex = document.querySelector('.delete-index');
+        if (deleteIndex.value) {
+            todoList.deleteTodo(deleteIndex.valueAsNumber);
+        }
     }
 }
