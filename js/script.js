@@ -76,13 +76,18 @@ const handlers = {
         todoList.toggleAll();
     },
     addTodo: function() {
-        todoList.addTodo(todoInput.value);
-        todoInput.value = '';
+        if (todoInput.value) {
+            todoList.addTodo(todoInput.value);
+            todoInput.value = '';
+        }
     },
     changeTodo: function() {
         const indexInput = document.querySelector('.index-input');
         const contentInput = document.querySelector('.content-input');
-        console.log(indexInput)
-        todoList.changeTodo(indexInput.value, contentInput.value);
+        if (indexInput.value && contentInput.value) {
+            todoList.changeTodo(indexInput.valueAsNumber, contentInput.value);
+        }
+        indexInput.value = '';
+        contentInput.value = '';
     }
 }
