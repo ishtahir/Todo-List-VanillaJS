@@ -14,11 +14,11 @@ todoInput.addEventListener("keyup", event => {
 const todoList = {
     todo: [],
     displayTodos: function() {
+        let lists = '';
         if (this.todo.length === 0) {
             console.log('List is empty, please add an item to do');
-            ul.innerHTML = '<li>List is empty, please add an item to do</li>';
+            lists = '<li>List is empty, please add an item to do</li>'
         }
-        let lists = '';
         this.todo.map(item => {
             item.completed ? console.log(`(X) ${item.todoText}`) : console.log(`( ) ${item.todoText}`);
             lists += item.completed ? `<li class="note"><input type="checkbox" checked><label>${item.todoText}</label></li>` : `<li class="note"><input type="checkbox"><label>${item.todoText}</label></li>`;
