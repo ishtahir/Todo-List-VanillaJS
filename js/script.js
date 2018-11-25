@@ -16,11 +16,9 @@ const todoList = {
     displayTodos: function() {
         let lists = '';
         if (this.todo.length === 0) {
-            console.log('List is empty, please add an item to do');
             lists = '<li>List is empty, please add an item to do</li>'
         }
         this.todo.map(item => {
-            item.completed ? console.log(`(X) ${item.todoText}`) : console.log(`( ) ${item.todoText}`);
             lists += item.completed ? `<li class="note"><input type="checkbox" checked><label>${item.todoText}</label></li>` : `<li class="note"><input type="checkbox"><label>${item.todoText}</label></li>`;
         });
         ul.innerHTML = lists;
