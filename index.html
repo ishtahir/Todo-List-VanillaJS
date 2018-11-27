@@ -12,17 +12,18 @@
         <input type="text" id="todo-input" placeholder="What needs to be done?">
         <button onclick="handlers.addTodo()" class="add-btn">ADD</button>
         <button onclick="handlers.deleteTodo()" class="remove-btn">DELETE</button>
+
         <div class="other-btns">
             <button onclick="handlers.displayTodos()">Display Todos</button>
             <button onclick="handlers.toggleAll()">Toggle All</button>
         </div>
-        <div>
+        <div class="change-todos-div">
+            <button class="change-btn" onclick="handlers.changeTodo()">Change Todos</button>
             <input type="number" class="index-input" min="0" placeholder="index to change">
             <input type="text" class="content-input" placeholder="content to change">
-            <button class="change-btn" onclick="handlers.changeTodo()">Change Todos</button>
         </div>
 
-        <div>
+        <div class="delete-todos-div">
             <input type="number" class="delete-index" placeholder="index to delete" min="0">
         </div>
 
