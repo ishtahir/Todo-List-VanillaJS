@@ -94,5 +94,9 @@ const handlers = {
             todoList.deleteTodo(deleteIndex.valueAsNumber);
         }
         deleteIndex.value = '';
+    },
+    toggleCompleted: function() {
+        const toggleIndex = document.querySelector('.toggle-todos-index');
+        todoList.toggleCompleted(toggleIndex.valueAsNumber);
     }
 }
