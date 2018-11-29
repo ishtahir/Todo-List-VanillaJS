@@ -98,5 +98,6 @@ const handlers = {
     toggleCompleted: function() {
         const toggleIndex = document.querySelector('.toggle-todos-index');
         todoList.toggleCompleted(toggleIndex.valueAsNumber);
+        toggleIndex.value = '';
     }
 }
