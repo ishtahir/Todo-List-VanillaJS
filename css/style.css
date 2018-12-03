@@ -1,7 +1,10 @@
 body {
-    /* text-align: center; */
     font-family: serif;
     position: relative;
+}
+
+header {
+    text-align: center;
 }
 
 #todo-input {
