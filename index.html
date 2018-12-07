@@ -2,39 +2,18 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
+        <title>Todo List: Vanilla JS</title>
+        <link rel="stylesheet" href="/css/todo.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <script type="text/javascript" src="/js/lib/jquery-3.3.1.min.js"></script>
     </head>
     <body>
-        <header>
-            <h1>Todo List (Vanilla JS)</h1>
-            <input type="text" id="todo-input" placeholder="What needs to be done?">
-            <button onclick="handlers.addTodo()" class="add-btn">ADD</button>
-            <button onclick="handlers.deleteTodo()" class="remove-btn">DELETE</button>
-        </header>
-
-        <div class="other-btns">
-            <button onclick="handlers.displayTodos()">Display Todos</button>
-            <button onclick="handlers.toggleAll()">Toggle All</button>
+        <div id="container">
+            <h1>Todo List (Vanilla JS) <i class="fa fa-minus"></i></h1>
+            <input type="text" placeholder="Add new todo">
+            <ul class="todo-list-items"></ul>
         </div>
-        <div class="change-todos-div">
-            <button class="change-btn" onclick="handlers.changeTodo()">Change Todos</button>
-            <input type="number" class="index-input" min="0" placeholder="index to change">
-            <input type="text" class="content-input" placeholder="content to change">
-        </div>
-
-        <div class="delete-todos-div">
-            <button onclick="handlers.deleteTodo()" class="delete-btn">Delete Todos</button>
-            <input type="number" class="delete-index" placeholder="index to delete" min="0">
-        </div>
-
-        <div class="toggle-completed-div">
-            <button onclick="handlers.toggleCompleted()" class="toggle-btn">Toggle Completed</button>
-            <input type="number" class="toggle-todos-index" placeholder="index to toggle" min="0">
-        </div>
-
-        <script src="js/script.js"></script>
+        <script type="text/javascript" src="/js/todo.js"></script>
     </body>
 </html>
