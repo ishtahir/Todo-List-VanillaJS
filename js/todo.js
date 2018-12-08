@@ -1,103 +1,45 @@
-const todoInput = document.getElementById('todo-input');
-const ul = document.createElement('ul');
-ul.classList.add('notes');
+const ul = document.querySelector('.todo-list-items');
+const li = document.querySelector('li');
+const span = document.querySelector('span');
 
-// use enter button for click
-todoInput.addEventListener("keyup", event => {
-    event.preventDefault();
-    if (event.keyCode === 13 && todoInput.value) {
-        document.querySelector('.add-btn').click();
+ul.addEventListener('click', function(event) {
+    // clear todos when they are clicked
+    if (event.target.nodeName === 'LI') {
+        event.toElement.classList.toggle('clear');
+    }
+
+    // delete todos when trash icon is clicked
+    if (event.target.nodeName === 'SPAN') {
+        event.target.parentNode.remove();
+    }
+
+    if (event.target.nodeName === 'I') {
+        event.target.parentNode.parentNode.remove();
     }
 });
 
-// working in the console to start off
-const todoList = {
-    todo: [],
-    displayTodos: function() {
-        let lists = '';
-        if (this.todo.length === 0) {
-            lists = '<li>List is empty, please add an item to do</li>'
-        }
-        this.todo.map(item => {
-            lists += item.completed ? `<li class="note"><input type="checkbox" checked><label>${item.todoText}</label></li>` : `<li class="note"><input type="checkbox"><label>${item.todoText}</label></li>`;
-        });
-        ul.innerHTML = lists;
-        document.body.appendChild(ul);
-    },
-    addTodo: function(text) {
-        this.todo.push({
-            todoText: text,
-            completed: false
-        });
-        this.displayTodos();
-    },
-    changeTodo: function(index, newText) {
-        this.todo[index].todoText = newText;
-        this.displayTodos();
-    },
-    deleteTodo: function(index) {
-        this.todo.splice(index, 1);
-        this.displayTodos();
-    },
-    toggleCompleted: function(index) {
-        const todo = this.todo[index];
-        todo.completed = !todo.completed;
-        this.displayTodos();
-    },
-    toggleAll: function() {
-        let completed = 0;
-        this.todo.forEach(item => {
-            if (item.completed) {
-                completed++;
-            };
-        });
-        // if everything is true, make everything false
-        if (completed === this.todo.length) {
-            this.todo.forEach(item => item.completed = false)
-        } else {
-            // make everything true
-            this.todo.forEach(item => {
-                if (item.completed === false) {
-                    item.completed = true;
-                }
-            })
-        }
-        this.displayTodos();
+const input = document.querySelector('input[type="text"]');
+input.addEventListener('keyup', function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13 && input.value) {
+        const value = this.value;
+        let text = document.createElement('li');
+        text.innerHTML = `<span><i class="fa fa-trash"></i></span>${value}`;
+        ul.appendChild(text);
+        this.value = '';
     }
-};
+});
 
-const handlers = {
-    displayTodos: function() {
-        todoList.displayTodos();
-    },
-    toggleAll: function() {
-        todoList.toggleAll();
-    },
-    addTodo: function() {
-        if (todoInput.value) {
-            todoList.addTodo(todoInput.value);
-            todoInput.value = '';
-        }
-    },
-    changeTodo: function() {
-        const indexInput = document.querySelector('.index-input');
-        const contentInput = document.querySelector('.content-input');
-        if (indexInput.value && contentInput.value) {
-            todoList.changeTodo(indexInput.valueAsNumber, contentInput.value);
-        }
-        indexInput.value = '';
-        contentInput.value = '';
-    },
-    deleteTodo: function() {
-        const deleteIndex = document.querySelector('.delete-index');
-        if (deleteIndex.value && todoList.todo[deleteIndex.value]) {
-            todoList.deleteTodo(deleteIndex.valueAsNumber);
-        }
-        deleteIndex.value = '';
-    },
-    toggleCompleted: function() {
-        const toggleIndex = document.querySelector('.toggle-todos-index');
-        todoList.toggleCompleted(toggleIndex.valueAsNumber);
-        toggleIndex.value = '';
+// toggle fade for input when icon is pressed
+const minus = document.querySelector('.fa-minus');
+minus.addEventListener('click', function() {
+    if (input.style.display === 'none') {
+        // input.style.animation = 'fadein 2s';
+        input.style.display = 'inline-block';
+    } else {
+        // input.style.animation = 'fadeout 2s';
+        input.style.display = 'none';
+        // input.onanimationend = function() {
+        // }
     }
-}
+})
